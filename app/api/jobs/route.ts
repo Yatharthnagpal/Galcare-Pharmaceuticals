@@ -1,17 +1,13 @@
 import { NextResponse } from "next/server"
 import { fetchWPJobs, createWPJob } from "@/lib/wordpress"
-import { JOBS } from "@/lib/site-data"
 
 export async function GET() {
   try {
     const wpJobs = await fetchWPJobs()
-    if (wpJobs && wpJobs.length > 0) {
-      return NextResponse.json({ success: true, jobs: wpJobs })
-    }
-    return NextResponse.json({ success: true, jobs: JOBS })
+    return NextResponse.json({ success: true, jobs: wpJobs || [] })
   } catch (error) {
     console.error("Error fetching jobs:", error)
-    return NextResponse.json({ success: true, jobs: JOBS })
+    return NextResponse.json({ success: true, jobs: [] })
   }
 }
 

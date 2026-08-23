@@ -119,7 +119,7 @@ export default function CareersPage() {
                 <Reveal>
                   <div className="relative rounded-3xl border border-border bg-card overflow-hidden shadow-md group aspect-[16/10] sm:aspect-[16/9]">
                     <Image
-                      src="/images/office-culture.png"
+                      src="/images/news/news-team.png"
                       alt="Galcare Corporate Office Team"
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

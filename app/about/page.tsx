@@ -116,12 +116,12 @@ export default function AboutPage() {
                 <Reveal>
                   <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] border border-border shadow-2xl bg-card">
                     <Image
-                      src="/hero2.png"
+                      src="/images/placeholders/timeline-founder.png"
                       alt="Devkant Bhardwaj - Founder Galcare Pharmaceuticals"
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/35 via-transparent to-transparent pointer-events-none" />
                     <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl glass-strong border border-border">
                       <h3 className="text-xl font-bold text-foreground">Devkant Bhardwaj</h3>
                       <p className="text-sm font-semibold text-primary">Founder & Visionary Leader</p>

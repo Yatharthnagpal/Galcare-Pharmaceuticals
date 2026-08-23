@@ -7,7 +7,7 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { AIAssistant } from "@/components/ai-assistant"
 import { Reveal } from "@/components/motion-primitives"
-import { JOBS, Job } from "@/lib/site-data"
+import { type Job } from "@/lib/site-data"
 import { useAuth } from "@/lib/auth-context"
 import { Users, CheckCircle2, FileText, UploadCloud, Trash2, Send, AlertCircle, ArrowLeft } from "lucide-react"
 
@@ -16,7 +16,7 @@ function ApplyFormContent() {
   const initialJob = searchParams.get("job") || searchParams.get("position") || ""
 
   const { user, openAuthModal, addJobApplication } = useAuth()
-  const [jobs, setJobs] = useState<Job[]>(JOBS)
+  const [jobs, setJobs] = useState<Job[]>([])
   const [selectedJob, setSelectedJob] = useState<string>(initialJob)
   const [pdfFile, setPdfFile] = useState<{ name: string; sizeStr: string; dataUrl: string } | null>(null)
   const [pdfError, setPdfError] = useState<string | null>(null)
@@ -57,35 +57,21 @@ function ApplyFormContent() {
     }
   }, [initialJob])
 
-  // Load dynamic jobs from WordPress CMS or local storage
+  // Load dynamic jobs from WordPress CMS
   useEffect(() => {
     const loadJobs = async () => {
       try {
         const res = await fetch("/api/jobs")
         if (res.ok) {
           const data = await res.json()
-          if (data.jobs && data.jobs.length > 0) {
-            setJobs(data.jobs)
-            return
-          }
+          setJobs(data.jobs || [])
+          return
         }
       } catch (e) {
         console.warn("Failed to fetch jobs from API", e)
       }
 
-      const savedJobs = localStorage.getItem("galcare_custom_jobs")
-      if (savedJobs) {
-        try {
-          const parsed = JSON.parse(savedJobs)
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            setJobs(parsed)
-            return
-          }
-        } catch (e) {
-          console.error("Failed to parse saved jobs", e)
-        }
-      }
-      setJobs(JOBS)
+      setJobs([])
     }
 
     loadJobs()

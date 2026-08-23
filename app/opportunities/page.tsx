@@ -6,44 +6,30 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { AIAssistant } from "@/components/ai-assistant"
 import { Reveal } from "@/components/motion-primitives"
-import { JOBS, Job } from "@/lib/site-data"
+import { type Job } from "@/lib/site-data"
 import { Briefcase, MapPin, Clock, Search, ArrowRight, Sparkles, Building2, CheckCircle2, ChevronRight } from "lucide-react"
 
 export default function OpportunitiesPage() {
-  const [jobs, setJobs] = useState<Job[]>(JOBS)
+  const [jobs, setJobs] = useState<Job[]>([])
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedDepartment, setSelectedDepartment] = useState<string>("All")
   const [selectedType, setSelectedType] = useState<string>("All")
 
-  // Load dynamic jobs from WordPress CMS or local storage
+  // Load dynamic jobs from WordPress CMS
   useEffect(() => {
     const loadJobs = async () => {
       try {
         const res = await fetch("/api/jobs")
         if (res.ok) {
           const data = await res.json()
-          if (data.jobs && data.jobs.length > 0) {
-            setJobs(data.jobs)
-            return
-          }
+          setJobs(data.jobs || [])
+          return
         }
       } catch (e) {
         console.warn("Failed to fetch jobs from API", e)
       }
 
-      const savedJobs = localStorage.getItem("galcare_custom_jobs")
-      if (savedJobs) {
-        try {
-          const parsed = JSON.parse(savedJobs)
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            setJobs(parsed)
-            return
-          }
-        } catch (e) {
-          console.error("Failed to parse saved jobs", e)
-        }
-      }
-      setJobs(JOBS)
+      setJobs([])
     }
 
     loadJobs()
