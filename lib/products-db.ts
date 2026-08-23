@@ -199,8 +199,7 @@ export const PRODUCTS: Product[] = [
     strength: "1X10",
     composition: "Tranexamic Acid - 500 mg + Pine Bark Extract - 150 mg",
     packaging: "10 Tablets Strip",
-    storage: "Store protected from moisture and light.",
-    indications: ["Severe melasma", "Vascular melasma"]
+    storage: "Store protected from moisture and light."
   },
   {
     id: "pynomax-od-tab",
@@ -217,8 +216,7 @@ export const PRODUCTS: Product[] = [
     strength: "1X10",
     composition: "Tranexamic Acid - 500 mg",
     packaging: "10 Tablets Strip",
-    storage: "Store below 30°C.",
-    indications: ["Dermal hyperpigmentation", "Melasma"]
+    storage: "Store below 30°C."
   },
   {
     id: "pynomax-plus-tablet",
@@ -235,8 +233,7 @@ export const PRODUCTS: Product[] = [
     strength: "1X10",
     composition: "Tranexamic Acid IP - 250 mg + Pine Bark Extract - 75 mg",
     packaging: "10 Tablets Strip",
-    storage: "Store in a dry place.",
-    indications: ["Hyperpigmentation maintenance", "Sun sensitivity"]
+    storage: "Store in a dry place."
   },
   {
     id: "pynomax-tx-tablet-new",
@@ -253,8 +250,7 @@ export const PRODUCTS: Product[] = [
     strength: "1X10",
     composition: "Tranexamic Acid IP - 250 mg",
     packaging: "10 Tablets Strip",
-    storage: "Store below 25°C.",
-    indications: ["Hyperpigmentation", "Melasma management"]
+    storage: "Store below 25°C."
   },
   {
     id: "grazia-up-cream",
@@ -337,7 +333,7 @@ export const PRODUCTS: Product[] = [
     category: "Acne Care",
     tagline: "Triple-action anti-acne therapy",
     description: "Combines Clindamycin 1%, Niacinamide 4%, and Allantoin 0.1% to eradicate acne pathogens and soothe inflammation.",
-    image: "/lab.png",
+    image: "/products/nax gel.png",
     ingredients: ["Clindamycin 1%  ", "Niacinamide 4%  ", "Allantoin 0.1%  "],
     benefits: ["Destroys P. acnes bacteria", "Reduces inflammatory redness", "Prevents scarring"],
     genericName: "Clindamycin & Niacinamide Gel",
@@ -385,8 +381,7 @@ export const PRODUCTS: Product[] = [
     strength: "1X10",
     composition: "Dutasteride IP - 0.5 mg",
     packaging: "10 Tablets Strip",
-    storage: "Store below 30°C. Protect from moisture.",
-    indications: ["Male pattern hair loss", "Androgenetic alopecia"]
+    storage: "Store below 30°C. Protect from moisture."
   },
   {
     id: "dutamax-m-tablet",
@@ -403,8 +398,7 @@ export const PRODUCTS: Product[] = [
     strength: "1X10",
     composition: "Minoxidil IP - 2.5 mg",
     packaging: "10 Tablets Strip",
-    storage: "Store below 25°C.",
-    indications: ["Diffused hair thinning", "Refractory alopecia"]
+    storage: "Store below 25°C."
   },
   {
     id: "redo-plus-hair-serum-60ml",
@@ -431,7 +425,7 @@ export const PRODUCTS: Product[] = [
     category: "Hair Care",
     tagline: "Comprehensive hair nutritional supplement",
     description: "Multivitamin, mineral, and amino acid complex tailored specifically for structural hair shaft synthesis.",
-    image: "/lab.png",
+    image: "/products/redo-plus-tab.png",
     ingredients: ["Biotin", "Essential Amino Acids", "Zinc", "Iron", "Natural Extracts"],
     benefits: ["Fortifies keratin structure", "Nourishes scalp matrix", "Supports hair anchor strength"],
     genericName: "Hair Nutritional Complex Tablets",
@@ -639,7 +633,7 @@ export const PRODUCTS: Product[] = [
     category: "Skin Therapy & Wellness",
     tagline: "Low-dose systemic itch & tension modulator",
     description: "Doxepin Hydrochloride 10 mg oral capsules for managing systemic dermatological pruritus.",
-    image: "/products/galdopin-10-capsules.jpg",
+    image: "/products/galdopin-10.png",
     ingredients: ["Doxepin Hydrochloride 10 mg"],
     benefits: ["Calms central itch perception", "Supports restful sleep"],
     genericName: "Doxepin Hydrochloride Capsules IP 10 mg",
@@ -658,7 +652,7 @@ export const PRODUCTS: Product[] = [
     category: "Skin Therapy & Wellness",
     tagline: "Systemic anti-pruritic & neuro-dermatology therapy",
     description: "Doxepin Hydrochloride 25 mg capsules providing systemic control for severe chronic itching.",
-    image: "/products/galdopin-25-capsules.jpg",
+    image: "/products/galdopin-25.png",
     ingredients: ["Doxepin Hydrochloride 25 mg"],
     benefits: ["Strong H1 receptor blockade", "Soothes neurogenic itch signals"],
     genericName: "Doxepin Hydrochloride Capsules IP 25 mg",
@@ -679,7 +673,7 @@ export const PRODUCTS: Product[] = [
     category: "Skin Infections & Anti-Fungal",
     tagline: "Targeted topical antibacterial cream",
     description: "Fusidic Acid 2%   cream for treating primary and secondary bacterial skin infections caused by Staph and Strep species.",
-    image: "/lab.png",
+    image: "/products/fusirose cream.png",
     ingredients: ["Fusidic Acid 2%  "],
     benefits: ["Potent Staphylococcal coverage", "Deep tissue penetration", "Non-staining formulation"],
     genericName: "Fusidic Acid 2% Cream",
@@ -842,7 +836,7 @@ export const PRODUCTS: Product[] = [
     category: "Skin Infections & Anti-Fungal",
     tagline: "Fluid antimycotic & anti-inflammatory lotion",
     description: "Terbinafine Hydrochloride 1% and Fluticasone Propionate 0.05% lotion for easy application on wide-spread inflamed fungal infections.",
-    image: "/products/terbimax-f-lotion-15ml.jpg",
+    image: "/products/terbimax-f-15ml.png",
     ingredients: ["Fluticasone Propionate IP 0.05% w/v", "Terbinafine Hydrochloride IP 1% w/v"],
     benefits: ["Spreads easily over large surfaces", "Rapid relief from fungal itch & redness", "Combined antifungal & anti-inflammatory action"],
     genericName: "Fluticasone & Terbinafine Lotion",
@@ -860,7 +854,7 @@ export const PRODUCTS: Product[] = [
     category: "Skin Infections & Anti-Fungal",
     tagline: "Extended fluid antimycotic therapy",
     description: "30 ML bottle of Terbinafine 1% and Fluticasone 0.05% lotion for persistent or multi-site fungal dermatoses.",
-    image: "/lab.png",
+    image: "/products/terbimax-f-30ml.png",
     ingredients: ["Fluticasone Propionate 0.05% ", "Terbinafine Hydrochloride 1% "],
     benefits: ["Comprehensive coverage", "Dual symptom & pathogen control"],
     genericName: "Terbinafine & Fluticasone Lotion",
@@ -1044,7 +1038,7 @@ export const PRODUCTS: Product[] = [
     category: "Skin Therapy & Wellness",
     tagline: "Targeted topical calcineurin inhibitor lotion",
     description: "Tacrolimus Lotion IP 0.03% formulated for sensitive skin areas, scalp dermatoses, and vitiligo.",
-    image: "/products/tacrovin-lotion.jpg",
+    image: "/products/tacrovin-lotion.png",
     ingredients: ["Tacrolimus Lotion IP 0.03%"],
     benefits: ["Non-steroidal anti-inflammatory action", "Soothes flare-ups without steroid atrophy"],
     genericName: "Tacrolimus 0.03% Lotion",
