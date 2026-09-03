@@ -24,17 +24,19 @@ const nextConfig = {
   },
   async rewrites() {
     // Proxy WordPress admin, login, and REST API requests to the original
-    // WordPress server. This avoids needing a separate subdomain — the client
-    // can keep using galcare.com/wp-admin as usual.
-    const wpOrigin = process.env.WORDPRESS_ORIGIN_URL || "http://118.139.178.174"
+    // WordPress server (118.139.178.174). This allows accessing galcare.com/wp-admin
+    // seamlessly through Vercel.
+    const wpOrigin = (process.env.WORDPRESS_ORIGIN_URL || "http://118.139.178.174").replace(/\/+$/, "")
 
     return {
-      // "beforeFiles" rewrites run before Next.js pages, so /wp-admin
-      // is intercepted before Next.js tries to render a 404.
       beforeFiles: [
         {
           source: "/wp-admin",
-          destination: `${wpOrigin}/wp-admin`,
+          destination: `${wpOrigin}/wp-admin/`,
+        },
+        {
+          source: "/wp-admin/",
+          destination: `${wpOrigin}/wp-admin/`,
         },
         {
           source: "/wp-admin/:path*",
