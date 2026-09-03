@@ -32,8 +32,10 @@ export function proxyToWordPress(req: NextRequest, targetPath: string): Promise<
       const chunks: Buffer[] = []
       proxyRes.on("data", (chunk) => chunks.push(Buffer.from(chunk)))
       proxyRes.on("end", () => {
-        const body = Buffer.concat(chunks)
+        let body = Buffer.concat(chunks)
         const responseHeaders = new Headers()
+
+        const resContentType = proxyRes.headers["content-type"] || ""
 
         Object.entries(proxyRes.headers).forEach(([key, val]) => {
           if (val && key.toLowerCase() !== "content-encoding" && key.toLowerCase() !== "content-length") {
@@ -44,6 +46,14 @@ export function proxyToWordPress(req: NextRequest, targetPath: string): Promise<
             }
           }
         })
+
+        // Rewrite http:// URLs to https:// to prevent Mixed Content blocking in browsers
+        if (resContentType.includes("text/html")) {
+          let html = body.toString("utf-8")
+          html = html.replaceAll("http://galcare.com", "https://galcare.com")
+          html = html.replaceAll("http://118.139.178.174", "https://galcare.com")
+          body = Buffer.from(html, "utf-8")
+        }
 
         resolve(
           new NextResponse(body, {
